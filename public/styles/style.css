@@ -1,0 +1,38 @@
+body {
+    background-color: antiquewhite;
+}
+
+#wrapper {
+    width: 60em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+}
+
+#articles {
+    display: inline-block;
+    overflow: auto;
+    width: 60%;
+    height: 65em;
+}
+
+#notes {
+    float: right;
+    width: 30%;
+}
+
+textarea, input {
+    display: block;
+    width: 100%;
+    background-color: bisque;
+}
+
+input {
+    height: 3em;
+    font-size: 2em;
+}
+
+textarea {
+    height: 12.5em;
+    font-size: 1.5em;
+}
