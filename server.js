@@ -25,21 +25,19 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Must Connect to Mongo
-mongoose.connect("add URL", {
-    useNewUrlParser: true
-});
+mongoose.connect("mongodb://localhost:27017/myapp", {useNewUrlParser: true});
 
 // ROUTES
 
 //GET to the website...
 app.get("/scrape", function (req, res) {
     // axios to get the html body
-    axios.get("https://www.reverb.com/marketplace?condition=used").then(function (response) {
+    axios.get("https://lp.reverb.com/c/auctions").then(function (response) {
         // Load into CHEERIO and save to $ as a shorthand selector
         const $ = cheerio.load(response.data);
 
 
-        $("article h2").each(function (i, element) {
+        $(".tiles h4").each(function (i, element) {
             let result = {};
 
             result.title = $(this)
