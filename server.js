@@ -25,21 +25,22 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Must Connect to Mongo
-mongoose.connect("mongodb://localhost:27017/sos", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/tinyDesk", {useNewUrlParser: true});
 
 // ROUTES
 
 //GET to the website...
 app.get("/scrape", function (req, res) {
     // axios to get the html body
-    axios.get("https://www.npr.org/series/tiny-desk-concerts/").then(function (response) {
+    axios.get("https://www.npr.org/series/tiny-desk-concerts").then(function (response) {
         // Load into CHEERIO and save to $ as a shorthand selector
+        console.log(response.data);
         const $ = cheerio.load(response.data);
 
-        $("<article>").each(function(i, element) {
-            let result = [];
-            console.log(this);
-            result.title = $(i)
+        $(".info").each(function(i, element) {
+            // console.log(this);
+            let result = {};
+            result.title = $(this)
                 .children("h2")
                 .text();
             result.link = $(this)
@@ -48,10 +49,10 @@ app.get("/scrape", function (req, res) {
 
             db.Article.create(result)
                 .then(function (dbArticle) {
-                    console.log(dbArticle);
+                    // console.log(dbArticle);
                 })
                 .catch(function (err) {
-                    console.log(err);
+                   return err;
                 })
         })
         res.send("Scrape Complete");
@@ -69,31 +70,31 @@ app.get("/articles", function (req, res) {
         });
 });
 
-// GET to Find an Article
+// // GET to Find an Article
 
-app.get("/articles/:id", function(req, res) {
-    db.Article.findOne({ _id: req.params.id })
-        .populate("note")
-        .then(function(dbArticle) {
-            res.json(dbArticle);
-        })
-        .catch(function(err) {
-            res.json(err);
-        })
-})
+// app.get("/articles/:id", function(req, res) {
+//     db.Article.findOne({ _id: req.params.id })
+//         .populate("note")
+//         .then(function(dbArticle) {
+//             res.json(dbArticle);
+//         })
+//         .catch(function(err) {
+//             res.json(err);
+//         })
+// })
 
-app.post("/articles/:id", function(req, res) {
-    db.Note.create(req.body)
-    .then(function(dbNote) {
-        return db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true })
-    })
-    .then(function(dbArticle) {
-        res.json(dbArticle);
-    })
-    .catch(function(err) {
-        res.json(err);
-    });
-});
+// app.post("/articles/:id", function(req, res) {
+//     db.Note.create(req.body)
+//     .then(function(dbNote) {
+//         return db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true })
+//     })
+//     .then(function(dbArticle) {
+//         res.json(dbArticle);
+//     })
+//     .catch(function(err) {
+//         res.json(err);
+//     });
+// });
 
 
 app.listen(PORT, function () {
