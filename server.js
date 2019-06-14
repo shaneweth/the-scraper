@@ -17,9 +17,7 @@ const app = express();
 // Morgan for the logs...
 app.use(logger("dev"));
 // Parse JSON req body
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Static Public Folder
 app.use(express.static("public"));
@@ -32,16 +30,16 @@ mongoose.connect("mongodb://localhost:27017/tinyDesk", {useNewUrlParser: true});
 //GET to the website...
 app.get("/scrape", function (req, res) {
     // axios to get the html body
-    axios.get("https://www.npr.org/series/tiny-desk-concerts").then(function (response) {
+    axios.get("https://www.npr.org/series/tiny-desk-concerts/").then(function (response) {
         // Load into CHEERIO and save to $ as a shorthand selector
         console.log(response.data);
         const $ = cheerio.load(response.data);
 
-        $(".info").each(function(i, element) {
+        $(".info > h2").each(function(i, element) {
             // console.log(this);
             let result = {};
             result.title = $(this)
-                .children("h2")
+                .children()
                 .text();
             result.link = $(this)
                 .children("a")
@@ -49,7 +47,7 @@ app.get("/scrape", function (req, res) {
 
             db.Article.create(result)
                 .then(function (dbArticle) {
-                    // console.log(dbArticle);
+                    console.log(dbArticle);
                 })
                 .catch(function (err) {
                    return err;
