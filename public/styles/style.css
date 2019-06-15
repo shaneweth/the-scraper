@@ -19,6 +19,13 @@ main {
     padding: 2em;
 }
 
+main a {
+    text-decoration: none;
+    font-family: 'Rancho', cursive;
+    font-size: 2rem;
+    color: rgb(58, 58, 58);
+}
+
 .sidebar {
     grid-area: sidebar;
     border: 2px blue solid;

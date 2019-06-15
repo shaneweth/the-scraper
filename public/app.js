@@ -1,7 +1,7 @@
 // Grab articles - JSON
 $.getJSON("/articles", function(data) {
     for  (var i = 0; i < data.length; i++) {
-        $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+        $("#articles").append("<p data-id='" + data[i]._id + "'>" + "<a href=" + data[i].link + ">" + data[i].title + "</a>" + "<hr>");
     }
 });
 
@@ -18,7 +18,7 @@ $(document).on("click", "p", function() {
         // title
         $("#notes").append("<h2>" + data.title + "</h2>");
         // input field for new title
-        $("#notes").append("<input id='titleinput' name='title' >");
+        $("#notes").append("<input id='titleinput' name='title' />");
         $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
         $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
 

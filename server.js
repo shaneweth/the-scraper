@@ -43,9 +43,7 @@ app.get("/scrape", function (req, res) {
             result.link = $(this)
                 .children("a")
                 .attr("href");
-            result.teaser = $(this)
-                .children("p")
-                .text();
+
             // console.log(this);            
 
             db.Article.create(result)
@@ -56,7 +54,7 @@ app.get("/scrape", function (req, res) {
                    return err;
                 })
         })
-        res.send("Scrape Complete");
+        // res.send("Scrape Complete");
     });
 });
 
@@ -71,31 +69,31 @@ app.get("/articles", function (req, res) {
         });
 });
 
-// // GET to Find an Article
+// GET to Find an Article
 
-// app.get("/articles/:id", function(req, res) {
-//     db.Article.findOne({ _id: req.params.id })
-//         .populate("note")
-//         .then(function(dbArticle) {
-//             res.json(dbArticle);
-//         })
-//         .catch(function(err) {
-//             res.json(err);
-//         })
-// })
+app.get("/articles/:id", function(req, res) {
+    db.Article.findOne({ _id: req.params.id })
+        .populate("note")
+        .then(function(dbArticle) {
+            res.json(dbArticle);
+        })
+        .catch(function(err) {
+            res.json(err);
+        })
+})
 
-// app.post("/articles/:id", function(req, res) {
-//     db.Note.create(req.body)
-//     .then(function(dbNote) {
-//         return db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true })
-//     })
-//     .then(function(dbArticle) {
-//         res.json(dbArticle);
-//     })
-//     .catch(function(err) {
-//         res.json(err);
-//     });
-// });
+app.post("/articles/:id", function(req, res) {
+    db.Note.create(req.body)
+    .then(function(dbNote) {
+        return db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true })
+    })
+    .then(function(dbArticle) {
+        res.json(dbArticle);
+    })
+    .catch(function(err) {
+        res.json(err);
+    });
+});
 
 
 app.listen(PORT, function () {
