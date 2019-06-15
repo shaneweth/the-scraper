@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;
     grid-template-areas:
-        ". header header header"
+        ". header . ."
         "main main main sidebar"
         "main main main sidebar"
         "footer footer footer footer";
@@ -16,9 +16,21 @@ body {
 header {
     grid-area: header;
     height: 20rem;
+    width: 100%;
     background-image: url("../assets/TD_SXSW-Banner.png");
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+header button {
+    opacity: 0;
+    height: 20rem;
+    width: 100%;
+    z-index: 99;
+}
+
+header button:hover {
+    cursor: pointer;
 }
 
 
@@ -50,7 +62,6 @@ main a:hover {
 
 .sidebar {
     grid-area: sidebar;
-    border: 2px blue solid;
 }
 
 footer {
