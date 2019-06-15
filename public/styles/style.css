@@ -2,28 +2,45 @@
     display: grid;
     grid-template-columns: auto 2fr 1fr 1fr;
     grid-template-areas:
-            "header header header header"
-            ". main main sidebar" 
-            ". main main sidebar" 
-            "footer footer footer footer";
+        ". . header ."
+        ". main main sidebar"
+        ". main main sidebar"
+        "footer footer footer footer";
 }
 
 header {
     grid-area: header;
+    height: 20rem;
     border: 2px red solid;
+    background-image: url("../assets/TD_SXSW-Banner.png");
+
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-main { 
+
+main {
     grid-area: main;
     border: 2px black solid;
-    padding: 2em;
+    border-radius: 5rem;
+    padding: 5em;
+    background-image: linear-gradient(#B96080 0, #3E89B7 80%);
+    text-align: right;
 }
 
 main a {
     text-decoration: none;
-    font-family: 'Rancho', cursive;
-    font-size: 2rem;
-    color: rgb(58, 58, 58);
+    font-family: 'Bungee Shade', cursive;
+    font-size: 2vw;
+    color: whitesmoke;
+    transition: .2s;
+}
+
+main a:hover {
+    color: #CFAF02;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.521);
+    font-size: 2.4vw;
+    transition: .4s;
 }
 
 .sidebar {
@@ -35,6 +52,3 @@ footer {
     grid-area: footer;
     border: 2px yellow solid;
 }
-
-
-
