@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: radial-gradient(circle, rgba(32, 32, 32, 0.781), rgb(219, 219, 219), rgba(0, 0, 0, 0.877), rgba(32, 32, 32, 0.781), rgba(241, 241, 241, 0.822), rgba(0, 0, 0, 0.877), rgba(32, 32, 32, 0.781), rgba(241, 241, 241, 0.822), rgba(0, 0, 0, 0.671));
+    background-image: radial-gradient(circle, rgba(119, 119, 119, 0.781), rgb(219, 219, 219), rgba(0, 0, 0, 0.877), rgba(32, 32, 32, 0.781), rgba(241, 241, 241, 0.822), rgba(0, 0, 0, 0.877), rgba(32, 32, 32, 0.781), rgba(241, 241, 241, 0.822), rgba(0, 0, 0, 0.671));
     background-repeat: no-repeat;
 }
 
@@ -39,7 +39,7 @@ main {
     border: rgba(88, 88, 88, 0.76) .6rem double;
     border-radius: .5rem;
     padding: 5em;
-    background-image: url("../assets/natural-paper.png"), linear-gradient(rgba(185, 96, 129, 0.884) 0, rgba(62, 137, 183, 0.842) 80%);
+    background-image: url("../assets/natural-paper.png"), linear-gradient(rgba(190, 105, 136, 0.884) 0, rgba(89, 149, 185, 0.842) 80%);
     text-align: right;
 }
 
