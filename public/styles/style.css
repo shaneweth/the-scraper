@@ -1,19 +1,22 @@
 .grid-container {
     display: grid;
-    grid-template-columns: auto 2fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
     grid-template-areas:
-        ". . header ."
-        ". main main sidebar"
-        ". main main sidebar"
+        ". header header header"
+        "main main main sidebar"
+        "main main main sidebar"
         "footer footer footer footer";
+}
+
+body {
+    background-image: radial-gradient(circle, rgba(32, 32, 32, 0.781), rgb(219, 219, 219), rgba(0, 0, 0, 0.877), rgba(32, 32, 32, 0.781), rgba(241, 241, 241, 0.822), rgba(0, 0, 0, 0.877), rgba(32, 32, 32, 0.781), rgba(241, 241, 241, 0.822), rgba(0, 0, 0, 0.671));
+    background-repeat: no-repeat;
 }
 
 header {
     grid-area: header;
     height: 20rem;
-    border: 2px red solid;
     background-image: url("../assets/TD_SXSW-Banner.png");
-
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -21,10 +24,10 @@ header {
 
 main {
     grid-area: main;
-    border: 2px black solid;
-    border-radius: 5rem;
+    border: rgba(88, 88, 88, 0.76) .6rem double;
+    border-radius: .5rem;
     padding: 5em;
-    background-image: linear-gradient(#B96080 0, #3E89B7 80%);
+    background-image: url("../assets/natural-paper.png"), linear-gradient(rgba(185, 96, 129, 0.884) 0, rgba(62, 137, 183, 0.842) 80%);
     text-align: right;
 }
 
@@ -32,15 +35,17 @@ main a {
     text-decoration: none;
     font-family: 'Bungee Shade', cursive;
     font-size: 2vw;
-    color: whitesmoke;
-    transition: .2s;
+    margin-right: 5rem;
+    color: rgba(34, 34, 34, 0.712);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.308);
+    transition: .4s;
 }
 
 main a:hover {
     color: #CFAF02;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.521);
-    font-size: 2.4vw;
-    transition: .4s;
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.521);
+    font-size: 2.1vw;
+    transition: .6s;
 }
 
 .sidebar {
