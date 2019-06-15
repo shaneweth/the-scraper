@@ -1,38 +1,33 @@
-body {
-    background-color: antiquewhite;
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 2fr 1fr 1fr;
+    grid-template-areas:
+            "header header header header"
+            ". main main sidebar" 
+            ". main main sidebar" 
+            "footer footer footer footer";
 }
 
-#wrapper {
-    width: 60em;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 5%;
+header {
+    grid-area: header;
+    border: 2px red solid;
 }
 
-#articles {
-    display: inline-block;
-    overflow: auto;
-    width: 60%;
-    height: 65em;
+main { 
+    grid-area: main;
+    border: 2px black solid;
+    padding: 2em;
 }
 
-#notes {
-    float: right;
-    width: 30%;
+.sidebar {
+    grid-area: sidebar;
+    border: 2px blue solid;
 }
 
-textarea, input {
-    display: block;
-    width: 100%;
-    background-color: bisque;
+footer {
+    grid-area: footer;
+    border: 2px yellow solid;
 }
 
-input {
-    height: 3em;
-    font-size: 2em;
-}
 
-textarea {
-    height: 12.5em;
-    font-size: 1.5em;
-}
+

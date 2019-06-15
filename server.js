@@ -30,13 +30,12 @@ mongoose.connect("mongodb://localhost:27017/tinyDesk", {useNewUrlParser: true});
 //GET to the website...
 app.get("/scrape", function (req, res) {
     // axios to get the html body
-    axios.get("https://www.npr.org/series/tiny-desk-concerts/").then(function (response) {
+    axios.get("https://www.npr.org/series/tiny-desk-concerts").then(function (response) {
         // Load into CHEERIO and save to $ as a shorthand selector
         console.log(response.data);
         const $ = cheerio.load(response.data);
 
         $(".info > h2").each(function(i, element) {
-            // console.log(this);
             let result = {};
             result.title = $(this)
                 .children()
@@ -44,6 +43,10 @@ app.get("/scrape", function (req, res) {
             result.link = $(this)
                 .children("a")
                 .attr("href");
+            result.teaser = $(this)
+                .children("p")
+                .text();
+            // console.log(this);            
 
             db.Article.create(result)
                 .then(function (dbArticle) {

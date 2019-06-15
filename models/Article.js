@@ -12,7 +12,10 @@ const ArticleSchema = new Schema({
         type: String,
         required: true
     },
-
+    teaser: {
+        type: String,
+        required: false
+    },
     note: {
         type: Schema.Types.ObjectId,
         ref: "Note"
