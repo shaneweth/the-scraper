@@ -22,14 +22,12 @@ header {
     background-repeat: no-repeat;
 }
 
-header button {
-    opacity: 0;
+header a {
     height: 20rem;
     width: 100%;
-    z-index: 99;
 }
 
-header button:hover {
+header a:hover {
     cursor: pointer;
 }
 
@@ -62,6 +60,11 @@ main a:hover {
 
 .sidebar {
     grid-area: sidebar;
+}
+
+.sidebar h2 {
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 footer {
