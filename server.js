@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Must Connect to Mongo
-mongoose.connect("mongodb://localhost:27017/tinyDesk", {useNewUrlParser: true});
+mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds339177.mlab.com:39177/heroku_bdqv68g9", {useNewUrlParser: true});
 
 // ROUTES
 
