@@ -1,7 +1,7 @@
 // Grab articles - JSON
 $.getJSON("/articles", function(data) {
     for  (var i = 0; i < data.length; i++) {
-        $("#articles").append("<p data-id='" + data[i]._id + "'>" + "<a href=" + data[i].link + ">" + data[i].title + "</a>" + "<hr>");
+        $("#articles").append("<p data-id='" + data[i]._id + "'>" + "<a href='" + data[i].link + "'target='_blank'>" + data[i].title + "</a>" + "<hr>");
     }
 });
 
@@ -11,7 +11,7 @@ $(document).on("click", "p", function() {
 
     $.ajax({
         method: "GET", 
-        url: "/articles" + thisId
+        url: "/articles/" + thisId
     })
     .then(function(data) {
         console.log(data);
