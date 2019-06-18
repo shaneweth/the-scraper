@@ -59,7 +59,6 @@ main p:hover {
     background-color: rgba(37, 37, 37, 0.486);
     border-radius: 1rem;
     border: rgba(214, 214, 214, 0.384) 3px double;
-    padding: 1vw;
     font-family: 'Indie Flower', cursive;
 }
 
@@ -88,9 +87,9 @@ main p:hover {
 }
 
 .sidebar button {
-    width: 60%;
-    height: 6rem;
-    margin: 10vw;
+    width: 80%;
+    height: 8rem;
+    margin: 5vw;
     border-radius: 50%;
     background-image: radial-gradient(circle at center, rgba(109, 92, 92, 0.836), rgb(159, 185, 224));
     color: white;
