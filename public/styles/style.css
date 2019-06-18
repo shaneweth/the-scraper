@@ -64,9 +64,9 @@ main p:hover {
 }
 
 .sidebar h2 {
-    color: #CFAF02;
+    color: rgba(199, 185, 103, 0.918);
     text-align: center;
-    font-size: 2.8vw;
+    font-size: 3vw;
 }
 
 
