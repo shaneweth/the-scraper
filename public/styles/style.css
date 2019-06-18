@@ -92,8 +92,8 @@ main p:hover {
     margin-left: auto;
     margin-right: auto;
     border-radius: 2rem;
-    background-image: radial-gradient(circle at center, rgba(109, 92, 92, 0.836), rgb(159, 185, 224));
-    color: rgb(172, 172, 172);
+    background-image: radial-gradient(circle at center, rgba(104, 77, 77, 0.836), rgb(159, 185, 224));
+    color: rgb(223, 223, 223);
     font-size: 2vw;
     
 }
