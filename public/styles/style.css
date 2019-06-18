@@ -60,6 +60,7 @@ main p:hover {
     border-radius: 1rem;
     border: rgba(214, 214, 214, 0.384) 3px double;
     font-family: 'Indie Flower', cursive;
+    padding: 1rem;
 }
 
 .sidebar h2 {
