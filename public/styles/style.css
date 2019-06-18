@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;
     grid-template-areas:
-        ". header header ."
+        ". header . ."
         "main main main sidebar"
         "main main main sidebar"
         "footer footer footer footer";
@@ -22,21 +22,12 @@ header {
     background-repeat: no-repeat;
 }
 
-header a {
-    height: 20rem;
-    width: 100%;
-}
-
-header a:hover {
-    cursor: pointer;
-}
-
 
 main {
     grid-area: main;
     border: rgba(88, 88, 88, 0.76) .6rem double;
     border-radius: .5rem;
-    padding: 5em;
+    padding: 3em;
     background-image: url("../assets/natural-paper.png"), linear-gradient(rgba(190, 105, 136, 0.884) 0, rgba(89, 149, 185, 0.842) 80%);
     text-align: right;
 }
@@ -56,6 +47,10 @@ main a:hover {
     text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.521);
     font-size: 2.1vw;
     transition: .6s;
+}
+
+main p:hover {
+    cursor: pointer;
 }
 
 .sidebar {
@@ -81,10 +76,15 @@ main a:hover {
     height: 30rem;
     border: 5px inset rgba(0, 0, 0, 0.747);
     border-radius: 1rem;
-    background-image: url("/public/assets/linen.jpg");
+    background-image: url("../assets/linen.jpg");
+    background-size: cover;
     font-family: 'Architects Daughter', cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 10%;
+}
+
+.sidebar textarea:focus {
+    outline-width: 0;
 }
 
 .sidebar button {
