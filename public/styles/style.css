@@ -89,7 +89,7 @@ main p:hover {
 .sidebar button {
     width: 80%;
     height: 8rem;
-    margin: 5vw;
+    margin: 1vw;
     border-radius: 50%;
     background-image: radial-gradient(circle at center, rgba(109, 92, 92, 0.836), rgb(159, 185, 224));
     color: white;
