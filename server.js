@@ -58,7 +58,7 @@ app.get("/scrape", function (req, res) {
                    return err;
                 })
         })
-        res.send("Scrape Complete");
+        res.redirect('https://tiniest-desk.herokuapp.com')    
     });
 });
 

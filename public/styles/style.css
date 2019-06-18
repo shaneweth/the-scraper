@@ -25,6 +25,7 @@ header {
 
 main {
     grid-area: main;
+    min-height: 100vh;
     border: rgba(88, 88, 88, 0.76) .6rem double;
     border-radius: .5rem;
     padding: 3em;
@@ -60,7 +61,7 @@ main p:hover {
     border: rgba(214, 214, 214, 0.384) 3px double;
     padding: 1rem;
     font-family: 'Indie Flower', cursive;
-
+    text-decoration: none;
 }
 
 .sidebar h2 {
@@ -91,12 +92,7 @@ main p:hover {
     width: 100%;
     height: 6rem;
     border-radius: 50%;
-    background-image: radial-gradient(circle at center, rgba(83, 40, 40, 0.836), blue);
+    background-image: radial-gradient(circle at center, rgba(109, 92, 92, 0.836), rgb(159, 185, 224));
     color: white;
     font-size: 2vw;
-}
-
-footer {
-    grid-area: footer;
-    border: 2px yellow solid;
 }
