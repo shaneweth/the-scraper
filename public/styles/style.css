@@ -71,7 +71,7 @@ main p:hover {
 
 
 .sidebar textarea {
-    width: 90%;
+    width: 75%;
     height: 30rem;
     border: 5px inset rgba(0, 0, 0, 0.747);
     border-radius: 1rem;
