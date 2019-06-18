@@ -23,10 +23,11 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Must Connect to Mongo
-// mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds339177.mlab.com:39177/heroku_bdqv68g9", {useNewUrlParser: true});
 
-var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://<dbuser>:<dbpassword>@ds339177.mlab.com:39177/heroku_bdqv68g9'
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds339177.mlab.com:39177/heroku_bdqv68g9"
 mongoose.connect(MONGODB_URI);
+
+// mongoose.connect('mongodb://localhost:27017/tinyDesk', {useNewUrlParser: true});
 
 // ROUTES
 
@@ -57,7 +58,7 @@ app.get("/scrape", function (req, res) {
                    return err;
                 })
         })
-        // res.send("Scrape Complete");
+        res.send("Scrape Complete");
     });
 });
 

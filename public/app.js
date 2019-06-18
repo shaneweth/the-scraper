@@ -18,9 +18,9 @@ $(document).on("click", "p", function () {
             // title
             $("#notes").append("<h2>" + data.title + "</h2>");
             // input field for new title
-            $("#notes").append("<input id='titleinput' name='title' />");
+            // $("#notes").append("<input id='titleinput' name='title' />");
             $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
-            $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+            $("#notes").append("<button data-id='" + data._id + "' id='savenote'>save setlist</button>");
 
             if (data.note) {
 
