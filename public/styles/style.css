@@ -94,4 +94,9 @@ main p:hover {
     background-image: radial-gradient(circle at center, rgba(109, 92, 92, 0.836), rgb(159, 185, 224));
     color: white;
     font-size: 2vw;
+    
+}
+
+button:hover {
+    cursor: pointer;
 }
