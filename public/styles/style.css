@@ -29,7 +29,7 @@ main {
     border: rgba(88, 88, 88, 0.76) .6rem double;
     border-radius: .5rem;
     padding: 3em;
-    background-image: url("../assets/natural-paper.png"), linear-gradient(rgba(190, 105, 136, 0.884) 0, rgba(89, 149, 185, 0.842) 80%);
+    background-image: url("../assets/natural-paper.png"), linear-gradient(rgba(189, 148, 163, 0.884) 0, rgba(138, 169, 189, 0.842) 80%);
     text-align: right;
 }
 
